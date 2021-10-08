@@ -1,0 +1,272 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: #F4D03F;
+	background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+  b {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+h1,h2,h3,h4,h5,h6,p {
+	font-family: cursive;
+	font-size: 40px;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+p {
+	font-size: 25px;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: radial-gradient(circle, rgba(224,255,0,1) 47%, rgba(82,255,0,1) 100%);
+	padding: 2% 5% 2% 5%;
+	font-family: cursive;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px solid black;
+	transition: .2s;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	font-size: 30px;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+button:hover {
+	border: 10px solid black; 
+}
+
+button:active {
+	background: radial-gradient(circle, rgba(82,255,0,1) 47%, rgba(224,255,0,1) 100%);
+}
+
+/*btnClickBack*/
+.backBtn, .langBtnRu, .langBtnEn {
+    display: inline-flex;
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .2s;
+	padding: 1% 3% 1% 3%;
+}
+.backBtn:hover,.langBtnRu:hover, .langBtnEn:hover,
+.backBtn:active,.langBtnRu:active, .langBtnEn:active {
+    transform: rotate(-2deg);
+    padding: 22px 50px 22px 10px;
+}
+.backBtn:before {
+    content: "\27A4";
+    position: absolute;
+    right: -30px;
+    color: black;
+    transition: right 0.5s cubic-bezier(.97,.01,.97,.55);
+}
+.backBtn:hover:before {
+    right: 10px;
+}
+
+.langBtnRu, .langBtnEn {
+	font-size: 18px;
+	padding: 1% 3% 1% 3%;
+}
+
+.mapGame {
+	display: block;
+	width: 800px;
+	height: 800px;
+	background-color: gray;
+	/*border: 1px solid black;*/
+	border-radius: 50px;
+	background: linear-gradient(rgba(224,255,0,.4) 0%, rgba(0,0,0,.8) 100%);
+	/*background: radial-gradient(circle, rgba(224,255,0,.5) 47%, rgba(82,255,0,.8) 100%);*/
+
+}
+
+.my_timer {
+	color: #f00; font-size: 150%; font-weight: bold;
+}
+
+/*background game*/
+#particle-canvas {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+}    
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: -1;
+}
+.back, #back {
+    z-index: 0;
+    filter: blur(4px);	
+}
+.mid {
+    z-index: 1;
+    filter: blur(2px);
+}
+.front {
+    z-index: 2;
+}
+
+#time1, #time2, #time3, #time4 {
+	font-size: 10%;
+	animation-duration: 1.5s;
+    /*animation-iteration-count: ease;*/
+    animation-name: timer;
+}
+
+#okModalText {
+	font-size: 10%;
+	animation-duration: 1s;
+    animation-name: timer2;
+    z-index: 9999999999;
+}
+
+#pointModalText {
+	font-size: 100px;
+	animation-duration: 1s;
+    animation-name: timer2;
+    z-index: 9999999999;
+    color: white;
+}
+
+#winModalChild {
+	width: 50vw;
+	height: 50vh;
+	background-color: rgba(0,0,0,.5);
+	border: 10px solid white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+@keyframes timer {
+	0% {
+		font-size: 100px
+	}
+	100% {
+		font-size: 400px
+	}
+}
+@keyframes timer2 {
+	0% {
+		font-size: 10px
+	}
+	100% {
+		font-size: 100px
+	}
+}
+
+@keyframes medBackgroundStandart {
+	to {background: linear-gradient(rgba(255,65,65, 0) 0%, rgba(0,0,0, 0) 100%);}
+}
+
+@keyframes medBackground {
+	0% 	 {background: linear-gradient(rgba(255,65,65, 1) 0%, rgba(0,0,0, 1) 100%);}
+	10%  {background: linear-gradient(rgba(255,65,65,.9) 0%, rgba(0,0,0,.9) 100%);}
+	20%  {background: linear-gradient(rgba(255,65,65,.8) 0%, rgba(0,0,0,.8) 100%);}
+	30%  {background: linear-gradient(rgba(255,65,65,.7) 0%, rgba(0,0,0,.7) 100%);}
+	40%  {background: linear-gradient(rgba(255,65,65,.6) 0%, rgba(0,0,0,.6) 100%);}
+	50%  {background: linear-gradient(rgba(255,65,65,.5) 0%, rgba(0,0,0,.5) 100%);}
+	60%  {background: linear-gradient(rgba(255,65,65,.4) 0%, rgba(0,0,0,.4) 100%);}
+	70%  {background: linear-gradient(rgba(255,65,65,.3) 0%, rgba(0,0,0,.3) 100%);}
+	80%  {background: linear-gradient(rgba(255,65,65,.2) 0%, rgba(0,0,0,.2) 100%);}
+	90%  {background: linear-gradient(rgba(255,65,65,.1) 0%, rgba(0,0,0,.1) 100%);}
+	100% {background: linear-gradient(rgba(255,65,65, 0) 0%, rgba(0,0,0, 0) 100%);}
+}
+
+@keyframes hardBackground {
+	0% 	 {background: linear-gradient(rgba(255,65,65, 0) 0%, rgba(0,0,0, 0) 100%);}
+	10%  {background: linear-gradient(rgba(255,65,65,.1) 0%, rgba(0,0,0,.1) 100%);}
+	20%  {background: linear-gradient(rgba(255,65,65,.2) 0%, rgba(0,0,0,.2) 100%);}
+	30%  {background: linear-gradient(rgba(255,65,65,.3) 0%, rgba(0,0,0,.3) 100%);}
+	40%  {background: linear-gradient(rgba(255,65,65,.4) 0%, rgba(0,0,0,.4) 100%);}
+	50%  {background: linear-gradient(rgba(255,65,65,.5) 0%, rgba(0,0,0,.5) 100%);}
+	60%  {background: linear-gradient(rgba(255,65,65,.6) 0%, rgba(0,0,0,.6) 100%);}
+	70%  {background: linear-gradient(rgba(255,65,65,.7) 0%, rgba(0,0,0,.7) 100%);}
+	80%  {background: linear-gradient(rgba(255,65,65,.8) 0%, rgba(0,0,0,.8) 100%);}
+	90%  {background: linear-gradient(rgba(255,65,65,.9) 0%, rgba(0,0,0,.9) 100%);}
+	100% {background: linear-gradient(rgba(255,65,65, 1) 0%, rgba(0,0,0, 1) 100%);}
+}
+
+
+
+
+
+
+
+/******************MasterMenu******************/
+.divIntroLogo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  z-index: 1;
+  animation: introMenuMaster 5s; }
+  .divIntroLogo h1 {
+    font-size: 10vw;
+    animation: introLogo 5s; }
+  .divIntroLogo h6 {
+    font-size: 3vw;
+    animation: introLogo 5s; }
+
+.h1IntroLogo {
+  font-size: 10vw;
+  animation: introLogo 5s; }
+
+.h6IntroLogo {
+  font-size: 3vw;
+  animation: introLogo 5s; }
+
+@keyframes introLogo {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes introMenuMaster {
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*# sourceMappingURL=style.css.map */

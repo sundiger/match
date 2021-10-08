@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Игра Шарики</title>
+        <meta charset="utf-8">
+        <style type = "text/css">
+            body{
+                background: rgba(0,0,0,0);
+                padding: 0px;
+                margin: 0px;
+            }
+            canvas{
+                display:block;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        <script src = "phaser.min.js"></script>
+    </head>
+	<body>
+        <div class="divIntroLogo" id="divIntroLogo">
+            <h1 class="h1IntroLogo">Шарики</h1>
+            <h6 class="h6IntroLogo">Анисенко Алексей</h6>
+            <h6 class="h6IntroLogo">
+                <a href="http://sundiger.ru" style="color: white">
+                    http://sundiger.ru
+                </a>
+            </h6>
+        </div>
+        <script>
+            let divIntroLogo = document.getElementById('divIntroLogo')
+            setTimeout(()=>{
+                divIntroLogo.remove()
+            },5000)
+        </script>
+        <div style="background: linear-gradient(132deg, #F4D03F 0%, #16A085 100%); z-index: -1" id="particle-canvas">
+            <canvas class="back" id="back"></canvas>
+            <canvas class="mid"></canvas>
+            <canvas class="front"></canvas>
+        </div>
+        <script src="js/particle.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/game.js"></script>
+	</body>
+</html>
